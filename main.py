@@ -7,7 +7,7 @@ screen.setup(725, 495)
 image = "blank_states_img.gif"
 screen.addshape(image)
 turtle.shape(image)
-screen.tracer(0)
+# screen.tracer(0)
 # def get_mouse_click_coordinates(x, y):
 #     print(x,y)
 # turtle.onscreenclick(get_mouse_click_coordinates)
@@ -16,16 +16,13 @@ score = 0
 var = []
 state_over = False
 while not state_over:
-    screen.update()
+#     screen.update()
 
     answer_txt = turtle.Screen().textinput(title=f"{score}/50 Guess State", prompt="What's another state name?").title()
 
     data = pd.read_csv("50_states.csv")
     state_name = data[data.state == answer_txt]
     state_map = str(state_name.state)
-
-    if answer_txt != state_map:
-        state_over = False
 
 
     # If you quit all answer will shown on directly
